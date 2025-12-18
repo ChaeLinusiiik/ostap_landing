@@ -1,0 +1,1357 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #006b6f;
+  padding: 20px 0px;
+}
+
+.header-container {
+  margin: 0 auto;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.logo img {
+  height: auto;
+}
+
+.menu {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  padding: 0px;
+  padding-left: 20px;
+  background-color: #b0eedf;
+  transform: translateY(-100%);
+  transition: transform 0, 5s;
+  display: flex;
+}
+
+.menu.active {
+  transform: translateY(100%);
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-size: 24px;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu-button {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+}
+
+.menu-button::before,
+.menu-button::after {
+  content: "";
+  width: 30px;
+  height: 2px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+}
+
+.menu-button::before {
+  top: 30%
+}
+
+.menu-button::after {
+  top: 67%;
+}
+
+.menu-button.active {
+  border-bottom: none;
+}
+
+.menu-button.active::before {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(45deg);
+}
+
+.menu-button.active::after {
+  top: 50%;
+  transform: translate(-50%, 0) rotate(-45deg);
+}
+
+@media (max-width: 890px) {
+  .menu {
+    align-items: center;
+    padding: 0px;
+  }
+
+  .menu ul {
+    text-align: center;
+    width: 100%;
+
+  }
+}
+
+.english-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #7ddac6;
+}
+
+.english-left {
+  color: #0d2a1f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 15px;
+}
+
+.english-left h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  text-align: center;
+  color: #566663;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  text-align: center;
+  color: #566663;
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.button-free {
+  padding: 15px 40px;
+  background-color: #7ddac6;
+  border: 3px solid black;
+  border-radius: 20px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-free:hover {
+  background: #93f9e5;
+}
+
+.english-right {
+  width: 500px;
+  flex-shrink: 0;
+  display: flex;
+}
+
+.english-right img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 1021px) {
+  .english-section {
+    flex-direction: column;
+  }
+
+  .english-right img {
+    display: none;
+  }
+}
+
+/* 
+
+
+
+Секція переваг  
+
+
+
+*/
+.benefits-section {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.benefits-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0d2a1f;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #eaeaea;
+  padding: 0px 0px;
+  width: 30%;
+  box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-box {
+  margin-bottom: 0px;
+  height: 65px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.icon-box img {
+  max-height: 50px;
+  width: auto;
+}
+
+.card h3 {
+  font-size: 32px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #222;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0px;
+  font-size: 20px;
+  line-height: 1.5;
+  width: 240px;
+  color: #444;
+  font-family: sans-serif;
+}
+
+@media (max-width: 800px) {
+  .card {
+    flex-basis: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 800) {
+  .benefits-title {
+    font-size: 28px;
+  }
+}
+
+/* 
+
+
+
+Секція перваг: текст 
+
+
+
+*/
+.about-section {
+  display: flex;
+  margin-top: 80px;
+  background-color: #fff;
+  min-height: 500px;
+}
+
+.about-text {
+  flex: 1;
+  padding: 0px;
+  display: flex;
+  padding-left: 100px;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.about-text p {
+  color: #566663;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.about-visual {
+  width: 50%;
+  position: relative;
+  flex-shrink: 0;
+
+}
+
+.about-visual img {
+  width: 100%;
+  height: 100%;
+
+  clip-path: polygon(400px 0, 100% 0, 100% 100%, 0% 100%);
+  object-fit: cover;
+  object-position: center;
+
+}
+
+/*Зелений трикутник справа знизу */
+.green-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  background-color: #75dfc9;
+  clip-path: polygon(100% 100%, 100% 20%, 35% 100%);
+}
+
+.visual-text {
+  position: absolute;
+  top: 5px;
+  right: 150px;
+  text-align: right;
+  z-index: 10;
+}
+
+.visual-text h2 {
+  font-family: sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.visual-text .highlight {
+  position: absolute;
+  top: 90px;
+  left: 100px;
+  text-align: right;
+  z-index: 10;
+  color: #0d2a75;
+}
+
+@media (max-width: 1420px) {
+  .visual-text {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about-visual {
+    display: none;
+  }
+
+  .about-text {
+    padding: 0 90px;
+  }
+
+  @media (max-width: 900px) {
+    .about-text {
+      padding: 0 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .about-text {
+      padding: 0 10px;
+    }
+  }
+}
+
+/* 
+
+
+
+Про колектив
+
+
+
+*/
+.team-section {
+  padding: 70px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 36px;
+  color: #0d2a1f;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: sans-serif;
+}
+
+.team-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0;
+}
+
+.team-visual {
+  width: 50%;
+  height: 500px;
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  ;
+  clip-path: polygon(0 0, 100% 0, 40% 100%, 0 100%);
+  object-fit: cover;
+}
+
+.team-text {
+  width: 45%;
+  padding-top: 90px;
+  padding-right: 100px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team-text p {
+  color: #566663;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+}
+
+.button-start {
+  width: 100%;
+  padding: 20px 4px;
+  background-color: #7ddac6;
+  color: #0d2a1f;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: sans-serif;
+  border: 1px solid #52a696;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.button-start:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1100px) {
+  .team-section {
+    padding-bottom: 0;
+  }
+
+  .team-visual {
+    display: none;
+  }
+
+  .team-text {
+    width: 100%;
+    padding: 0 90px;
+    align-items: center;
+  }
+
+  .button-start {
+    width: 400px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-text {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-text {
+    padding: 0 10px;
+  }
+}
+
+/*
+
+
+Про наш колектив секція 2
+
+
+
+*/
+.notebook-section {
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+}
+
+.notebook-text {
+  flex: 1;
+  padding: 100px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notebook-text p {
+  color: #566663;
+  font-size: 24px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-family: sans-serif;
+}
+
+.button-lets-go {
+  padding: 20px 4px;
+  width: 100%;
+  background-color: #7ddac6;
+  border: 1px solid #999;
+  border-radius: 10px;
+  font-size: 24px;
+  font-family: sans-serif;
+  color: #0d2a1f;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.button-lets-go:hover {
+  transform: scale(1.05);
+}
+
+.notebook-visual {
+  flex: 1.2;
+  position: relative;
+  height: 500px;
+}
+
+.notebook-img {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@media (max-width: 1200px) {
+  .notebook-text {
+    padding: 40px 40px 40px 90px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .notebook-text {
+    padding: 40px 90px 40px 90px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .notebook-visual {
+    display: none;
+  }
+
+  .button-lets-go {
+    width: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .notebook-text {
+    padding: 40px 30px;
+  }
+
+  .notebook-visual {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .notebook-text {
+    padding: 40px 10px;
+  }
+}
+
+/*
+
+
+НАША ІСТОРІЯ  
+
+
+
+*/
+.history {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 0px 0px 0px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.history-title h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.history-title p {
+  font-size: 24px;
+  color: #1c2b2d;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.history-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.history-item {
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.history-item h3 {
+  margin: 15px 0 10px;
+  font-size: 24px;
+}
+
+.history-item p {
+  font-size: 20px;
+  color: #1c2b2d;
+}
+
+.icon-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-circle img {
+  width: 50px;
+  height: 50px;
+}
+
+.pink {
+  background-color: #fcd2dd;
+}
+
+.green {
+  background-color: #9cdbd5;
+}
+
+.blue {
+  background-color: #8fd6f2;
+}
+
+.yellow {
+  background-color: #fee1ad;
+}
+
+.orange {
+  background-color: #f78c8c;
+}
+
+@media (max-width: 1200px) {
+  .history-items {
+    padding: 0px 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .history {
+    flex-direction: column;
+  }
+
+  .history-items {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .history-item p {
+    width: 170%;
+    padding-bottom: 30px;
+    margin-top: 0;
+  }
+
+  .icon-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+
+  .icon-circle img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 800px) {
+  .history-item {
+    width: 30%;
+  }
+}
+
+/*
+
+
+
+Запрошуємо Вас на
+
+
+*/
+.services {
+  margin: 0 0;
+  padding: 60px 0px 50px 0px;
+  font-family: Arial, sans-serif;
+}
+
+.services h2 {
+  padding-left: 120px;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #1c2b2d;
+}
+
+.services-content {
+  display: flex;
+}
+
+.corners-left {
+  width: 100px;
+  height: 450px;
+  background-color: #75dfca;
+}
+
+.corners-right {
+  width: 370px;
+  height: 450px;
+  right: 0;
+  background-color: #75dfca;
+}
+
+.services-image img {
+  max-width: 450px;
+}
+
+.icons-near-image {
+  width: 100px;
+  padding-left: 20px;
+}
+
+.first-icon-near-image {
+  padding-top: 55px;
+  padding-bottom: 30px;
+}
+
+.second-icon-near-image {
+  padding-bottom: 10px;
+}
+
+.third-icon-near-image {
+  padding: 10px 0px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  padding: 39px 20px;
+  gap: 22px;
+}
+
+.service-item {
+  display: flex;
+}
+
+.service-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.service-item p {
+  font-size: 26px;
+  color: #062e2a;
+  margin: 0;
+}
+
+@media (max-width: 1420px) {
+  .corners-right {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .corners-right {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .corners-right {
+    width: 200px;
+  }
+}
+
+@media (max-width: 1270px) {
+  .corners-right {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1225px) {
+  .corners-right {
+    width: 100px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .corners-right {
+    width: 90px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .corners-left {
+    width: 50px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .corners-right {
+    width: 50px;
+  }
+}
+
+@media (max-width: 1130px) {
+  .corners-right {
+    display: none;
+  }
+}
+
+@media (max-width: 1130px) {
+  .corners-left {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .services-image img {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .services h2 {
+    font-size: 34px;
+    padding: 0 0;
+  }
+}
+
+.videoclass {
+  width: 1690px;
+  height: 400px;
+}
+
+.videoclass video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+
+
+/*
+
+
+Обери свій формат
+
+
+
+*/
+.pricing-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 20px;
+  box-sizing: border-box;
+}
+
+.price-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #1c2b2d;
+  margin-bottom: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  max-width: 380px;
+  border-radius: 20px;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-green {
+  background-color: #d0f9d2;
+}
+
+.card-green:hover {
+  background-color: #bff8c2;
+}
+
+.card-green .card-header {
+  background-color: #98f6aa;
+  box-shadow: 10px 10px 0px #6deca3;
+}
+
+
+.card-blue {
+  background-color: #beefff;
+}
+
+.card-blue .card-header {
+  background-color: #8be4fa;
+  box-shadow: 10px 10px 0px #2ecbf5;
+}
+
+.card-blue:hover {
+  background-color: #aae7fc;
+}
+
+
+.card-pink {
+  background-color: #f9c5eb;
+}
+
+.card-pink .card-header {
+  background-color: #fa98de;
+  box-shadow: 10px 10px 0px #f532c2;
+}
+
+.card-pink:hover {
+  background-color: #fcb8ea;
+}
+
+/*прямокутник*/
+.card-header {
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000;
+}
+
+.card-description {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.card-features li {
+  padding-left: 25px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.card-button {
+  margin-top: auto;
+  background-color: #ff0000;
+  color: white;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1000px) {
+  .cards-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    min-width: 400px;
+    margin-bottom: 20px;
+  }
+}
+
+/* 
+
+
+Реєстрація
+
+
+
+*/
+.reg-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.reg-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Gelasio', sans-serif;
+  font-weight: 700;
+
+  color: #1c2b2d;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.reg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.reg-image {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.reg-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.reg-form-wrapper {
+  flex: 1;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.form-header h3 {
+  font-size: 30px;
+  font-family: 'Geist', sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  color: #000;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.highlight-text {
+  font-size: 32px;
+  font-family: 'Geist', sans-serif;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  color: #c00000;
+  margin: 0;
+  font-weight: 400;
+}
+
+.reg-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Стилізація полів вводу (Input) */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+  position: absolute;
+  top: -20px;
+  /* Виносимо лейбл трохи вище, або можна залишити placeholder */
+  /* У макеті лейбли виглядають як placeholder, який зникає або це статичний текст над лінією */
+}
+
+/* Стиль самої лінії вводу */
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #b0b0b0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom-color: #083a35;
+  /* При кліку лінія стає зеленою */
+}
+
+.phone-group {
+  border-bottom: 1px solid #b0b0b0;
+}
+
+.phone-group input {
+  border-bottom: none;
+  padding-left: 10px;
+}
+
+.flag-icon {
+  font-size: 20px;
+  padding-right: 5px;
+  cursor: context-menu;
+}
+
+.submit-button {
+  margin-top: 30px;
+  background-color: #c00000;
+  color: white;
+  font-size: 18px;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  align-self: flex-end;
+  /* Кнопка притиснута до правого краю, або center якщо по центру */
+  /* У макеті кнопка схожа на центровану або праву, спробуємо по центру форми */
+  align-self: center;
+  box-shadow: 0 4px 10px rgba(192, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #a00000;
+}
+
+@media (max-width: 800px) {
+  .reg-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .reg-image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .reg-form-wrapper {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* 
+
+
+
+---  Footer 
+
+
+
+--- */
+.footer {
+  width: 100%;
+  background-color: #00856d;
+  color: #ffffff;
+  padding: 60px 15px 15px 15px;
+}
+
+.footer-container {
+  margin: 0 auto;
+  padding: 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.contact-item {
+  margin-bottom: 25px;
+}
+
+.contact-label {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.contact-value {
+  font-size: 20px;
+  margin: 0;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.phone-link,
+.email-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.phone-link:hover,
+.email-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.social-list li {
+  margin-bottom: 15px;
+}
+
+.social-list a {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.social-list a:hover {
+  transform: translateX(5px);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.payment-icons {
+  display: flex;
+
+  gap: 15px;
+  align-items: center;
+}
+
+.payment-icons img {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+}
+
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .payment-icons {
+    margin-top: 20px;
+  }
+}
